@@ -722,10 +722,9 @@ body, html {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -100;
 }
 
-/* line 48, sass/style.scss */
+/* line 47, sass/style.scss */
 #logo {
   position: fixed;
   bottom: 20px;
@@ -734,7 +733,7 @@ body, html {
   height: 100px;
 }
 
-/* line 57, sass/style.scss */
+/* line 56, sass/style.scss */
 #icons {
   position: fixed;
   bottom: 30px;
@@ -742,7 +741,7 @@ body, html {
   z-index: 100;
   text-align: right;
 }
-/* line 64, sass/style.scss */
+/* line 63, sass/style.scss */
 #icons span {
   -webkit-transition: all 0.5s ease 0s;
   -moz-transition: all 0.5s ease 0s;
@@ -755,23 +754,23 @@ body, html {
   height: 50px;
   line-height: 50px;
 }
-/* line 74, sass/style.scss */
+/* line 73, sass/style.scss */
 #icons img {
   height: 50px;
   padding-left: 5px;
 }
-/* line 80, sass/style.scss */
+/* line 79, sass/style.scss */
 #icons a:hover span {
   max-width: 300px;
 }
-/* line 85, sass/style.scss */
+/* line 84, sass/style.scss */
 #icons a {
   width: 100%;
   display: block;
   margin-top: 5px;
 }
 
-/* line 92, sass/style.scss */
+/* line 91, sass/style.scss */
 #demo {
   display: inline-block;
   margin-top: 15px;
@@ -781,7 +780,7 @@ body, html {
   transition: all 0.5s ease;
 }
 
-/* line 98, sass/style.scss */
+/* line 97, sass/style.scss */
 #end {
   width: 100%;
   text-align: center;
