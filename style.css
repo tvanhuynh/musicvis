@@ -785,5 +785,6 @@ body, html {
   width: 100%;
   text-align: center;
   line-height: 100vh;
-  z-index: 10000 !important;
+  z-index: 100;
+  position: absolute;
 }
