@@ -1,0 +1,790 @@
+/* line 1, sass/_intro.scss */
+#introBG {
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-image: url("images/bg.gif");
+  background-position: left center;
+  background-size: auto 150%;
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  filter: blur(5px);
+  z-index: -5;
+  -webkit-transition: background-position 1000s linear;
+  -moz-transition: background-position 1000s linear;
+  -o-transition: background-position 1000s linear;
+  transition: background-position 1000s linear;
+}
+
+/* line 18, sass/_intro.scss */
+body:hover #introBG {
+  background-position: right center !important;
+}
+
+/* line 23, sass/_intro.scss */
+#introduction {
+  display: table;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+/* line 30, sass/_intro.scss */
+#center {
+  display: table-cell;
+  vertical-align: middle;
+}
+/* line 34, sass/_intro.scss */
+#center img {
+  width: 20%;
+}
+/* line 38, sass/_intro.scss */
+#center a {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+}
+
+/* line 45, sass/_intro.scss */
+#summary {
+  position: absolute;
+  left: 30px;
+  bottom: 30px;
+  display: block;
+  width: calc(100% / 3);
+  text-align: left;
+}
+
+/* line 1, sass/_button.scss */
+.button {
+  display: inline-block;
+  padding: 20px;
+  color: #000;
+  border: solid #808080 1px;
+  background-color: rgba(255, 255, 255, 0.5);
+  min-width: 100px;
+  line-height: 15px;
+  text-align: center;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+/* line 13, sass/_button.scss */
+.button:hover {
+  cursor: pointer;
+}
+
+/* line 1, sass/_type.scss */
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 10pt;
+  line-height: 15pt;
+}
+
+/* line 7, sass/_type.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 11, sass/_type.scss */
+.button {
+  color: #808080;
+  font-size: 16pt;
+  letter-spacing: .1em;
+  font-feature-settings: "liga" 0;
+}
+
+/* line 18, sass/_type.scss */
+#summary {
+  color: #808080;
+  font-size: 12pt;
+  line-height: 18pt;
+}
+
+/* line 24, sass/_type.scss */
+#info {
+  font-size: 20pt;
+  text-align: right;
+}
+/* line 28, sass/_type.scss */
+#info #pitch {
+  display: block;
+  width: 100px;
+}
+/* line 33, sass/_type.scss */
+#info #color {
+  position: absolute;
+  top: 0;
+  left: 120px;
+  background-color: #e5e5e5;
+  height: 25pt;
+  width: 25pt;
+  border-radius: 100px;
+}
+
+/* line 45, sass/_type.scss */
+h1 {
+  margin: 0;
+  font-size: 20pt;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: .2em;
+  margin-bottom: 10pt;
+}
+
+/* line 54, sass/_type.scss */
+.columns {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  text-align: justify;
+}
+/* line 60, sass/_type.scss */
+.columns p {
+  margin: 0;
+  margin-bottom: 10pt;
+}
+
+/* line 66, sass/_type.scss */
+em {
+  border-bottom: 1px solid #808080;
+}
+
+/* line 70, sass/_type.scss */
+h2 {
+  font-weight: 100;
+  font-size: 15pt;
+}
+
+/* line 75, sass/_type.scss */
+#icons span {
+  font-size: 15pt;
+  text-transform: lowercase;
+  color: #808080;
+}
+
+/* line 81, sass/_type.scss */
+#demo {
+  font-feature-settings: "liga" 0;
+  color: #ccc;
+  font-weight: 800;
+  letter-spacing: .15em;
+  border: 2px #ccc solid;
+  padding: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+/* line 92, sass/_type.scss */
+#demo:hover {
+  color: #808080;
+  border-color: #808080;
+}
+
+/* line 97, sass/_type.scss */
+#loading {
+  line-height: 100vh;
+  width: 100%;
+  text-align: center;
+}
+
+/* line 1, sass/_popup.scss */
+.popup {
+  display: block;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 25px;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-right: 500px;
+  height: 50%;
+  width: calc(50% - 25px);
+  position: fixed;
+  top: 25%;
+  left: 25%;
+  box-shadow: 0px 0px 30px #888;
+  overflow: hidden;
+}
+/* line 16, sass/_popup.scss */
+.popup h1 {
+  padding-top: 25px;
+}
+
+/* line 21, sass/_popup.scss */
+.block {
+  display: block;
+  min-height: 100%;
+  margin-bottom: 100pt;
+}
+
+/* line 27, sass/_popup.scss */
+#tutorialnavigation, #settingsnavigation {
+  position: absolute;
+  top: calc(75% + 20px);
+  right: calc(25% - 25px);
+}
+
+/* line 33, sass/_popup.scss */
+#skiptutorial, #reset {
+  position: absolute;
+  top: calc(75% + 20px);
+  left: calc(25%);
+}
+
+/* line 1, sass/_tutorial.scss */
+.demo {
+  border: solid 1px #808080;
+  height: 25vh;
+  position: relative;
+  background-image: url(images/hover.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* line 10, sass/_tutorial.scss */
+.demo:hover {
+  background: none;
+}
+
+/* line 15, sass/_tutorial.scss */
+.position .line {
+  height: 100%;
+  width: 1px;
+  background-color: #808080;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* line 22, sass/_tutorial.scss */
+.position .line p {
+  margin: 0;
+  left: 5px;
+  position: absolute;
+  top: calc(100% - 21px);
+}
+/* line 29, sass/_tutorial.scss */
+.position .circle {
+  display: block;
+  height: 50px;
+  width: 50px;
+  border-radius: 500px;
+  background-color: #ccc;
+  position: absolute;
+  top: calc(50% - 25px);
+  text-align: center;
+  line-height: 50px;
+}
+/* line 41, sass/_tutorial.scss */
+.position .circle:hover {
+  cursor: default;
+}
+/* line 45, sass/_tutorial.scss */
+.position .one {
+  left: calc(100% / 6 - 25px);
+}
+/* line 49, sass/_tutorial.scss */
+.position .two {
+  left: calc(200% / 6 - 25px);
+}
+/* line 53, sass/_tutorial.scss */
+.position .three {
+  left: calc(300% / 6 - 25px);
+}
+/* line 57, sass/_tutorial.scss */
+.position .four {
+  left: calc(400% / 6 - 25px);
+}
+/* line 61, sass/_tutorial.scss */
+.position .five {
+  left: calc(500% / 6 - 25px);
+}
+/* line 65, sass/_tutorial.scss */
+.position .one, .position .two, .position .three, .position .four, .position .five {
+  background-color: #ccc;
+  opacity: 0;
+}
+
+/* line 72, sass/_tutorial.scss */
+.position:hover .line {
+  animation: LTR 3s linear forwards;
+}
+/* line 76, sass/_tutorial.scss */
+.position:hover .one {
+  animation: fadeIn .5s linear .5s 1 forwards;
+}
+/* line 80, sass/_tutorial.scss */
+.position:hover .two {
+  animation: fadeIn .5s linear 1s 1 forwards;
+}
+/* line 84, sass/_tutorial.scss */
+.position:hover .three {
+  animation: fadeIn .5s linear 1.5s 1 forwards;
+}
+/* line 88, sass/_tutorial.scss */
+.position:hover .four {
+  animation: fadeIn .5s linear 2s 1 forwards;
+}
+/* line 92, sass/_tutorial.scss */
+.position:hover .five {
+  animation: fadeIn .5s linear 2.5s 1 forwards;
+}
+
+/* line 99, sass/_tutorial.scss */
+.height img {
+  height: 100px;
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  z-index: 100;
+}
+/* line 107, sass/_tutorial.scss */
+.height .key {
+  position: absolute;
+  background-color: #808080;
+  height: 100px;
+  width: 20px;
+  top: calc(100% - 50px);
+  opacity: 0;
+}
+/* line 116, sass/_tutorial.scss */
+.height .white {
+  position: absolute;
+  background-color: #fff;
+  height: 100px;
+  width: 290px;
+  top: calc(100% - 58px);
+  left: -7px;
+}
+/* line 125, sass/_tutorial.scss */
+.height .keyOne {
+  left: 0;
+}
+/* line 129, sass/_tutorial.scss */
+.height .keyTwo {
+  left: calc(20px * 1);
+}
+/* line 133, sass/_tutorial.scss */
+.height .keyThree {
+  left: calc(20px * 2);
+}
+/* line 137, sass/_tutorial.scss */
+.height .keyFour {
+  left: calc(20px * 3);
+}
+/* line 141, sass/_tutorial.scss */
+.height .keyFive {
+  left: calc(20px * 4);
+}
+/* line 145, sass/_tutorial.scss */
+.height .one {
+  top: 60% !important;
+}
+/* line 149, sass/_tutorial.scss */
+.height .two {
+  top: 50% !important;
+}
+/* line 153, sass/_tutorial.scss */
+.height .three {
+  top: 40% !important;
+}
+/* line 157, sass/_tutorial.scss */
+.height .four {
+  top: 30% !important;
+}
+/* line 161, sass/_tutorial.scss */
+.height .five {
+  top: 20% !important;
+}
+
+/* line 167, sass/_tutorial.scss */
+.height:hover .keyOne {
+  animation: opacity .5s linear .5s 1 alternate;
+}
+/* line 171, sass/_tutorial.scss */
+.height:hover .keyTwo {
+  animation: opacity .5s linear 1s 1 alternate;
+}
+/* line 175, sass/_tutorial.scss */
+.height:hover .keyThree {
+  animation: opacity .5s linear 1.5s 1 alternate;
+}
+/* line 179, sass/_tutorial.scss */
+.height:hover .keyFour {
+  animation: opacity .5s linear 2s 1 alternate;
+}
+/* line 183, sass/_tutorial.scss */
+.height:hover .keyFive {
+  animation: opacity .5s linear 2.5s 1 alternate;
+}
+
+/* line 189, sass/_tutorial.scss */
+.size .one {
+  height: 30px;
+  width: 30px;
+  line-height: 30px;
+}
+/* line 195, sass/_tutorial.scss */
+.size .three {
+  height: 70px;
+  width: 70px;
+  line-height: 70px;
+}
+/* line 201, sass/_tutorial.scss */
+.size .four {
+  height: 90px;
+  width: 90px;
+  line-height: 90px;
+}
+/* line 207, sass/_tutorial.scss */
+.size .five {
+  height: 110px;
+  width: 110px;
+  line-height: 110px;
+}
+/* line 213, sass/_tutorial.scss */
+.size .keyOne {
+  background-color: #d4d4d4;
+}
+/* line 217, sass/_tutorial.scss */
+.size .keyTwo {
+  background-color: #a8a8a8;
+  animation-duration: .75s !important;
+}
+/* line 222, sass/_tutorial.scss */
+.size .keyThree {
+  background-color: #808080;
+  animation-duration: 1s !important;
+}
+/* line 227, sass/_tutorial.scss */
+.size .keyFour {
+  background-color: #545454;
+  animation-duration: 1.25s !important;
+}
+/* line 232, sass/_tutorial.scss */
+.size .keyFive {
+  background-color: #292929;
+  animation-duration: 1.5s !important;
+}
+
+/* line 239, sass/_tutorial.scss */
+.color:hover .one {
+  background-color: #ff4300 !important;
+}
+/* line 243, sass/_tutorial.scss */
+.color:hover .two {
+  background-color: #d1ff00 !important;
+}
+/* line 247, sass/_tutorial.scss */
+.color:hover .three {
+  background-color: #00ff5d !important;
+}
+/* line 251, sass/_tutorial.scss */
+.color:hover .four {
+  background-color: #00c6ff !important;
+}
+/* line 255, sass/_tutorial.scss */
+.color:hover .five {
+  background-color: #4600dc !important;
+}
+
+/* line 260, sass/_tutorial.scss */
+.center {
+  text-align: center;
+  padding-top: 15%;
+  overflow: hidden;
+}
+
+/* line 266, sass/_tutorial.scss */
+#upload {
+  position: absolute;
+  top: -500px;
+}
+
+/* line 272, sass/_tutorial.scss */
+#settingspanel h2 {
+  padding-top: 25px;
+  padding-bottom: 15px;
+}
+/* line 277, sass/_tutorial.scss */
+#settingspanel .warning {
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+/* line 282, sass/_tutorial.scss */
+#settingspanel .colorselect {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+  position: relative;
+  top: 3px;
+  left: 10px;
+  border: solid 2px #fff;
+  outline: solid 1px #ccc;
+}
+/* line 294, sass/_tutorial.scss */
+#settingspanel .colorselect:hover {
+  cursor: pointer;
+}
+/* line 298, sass/_tutorial.scss */
+#settingspanel .circle {
+  height: 3vw;
+  width: 3vw;
+  border-radius: 500px;
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  line-height: 3vw;
+  font-size: .6vw;
+}
+/* line 310, sass/_tutorial.scss */
+#settingspanel .circle:hover {
+  cursor: default;
+}
+/* line 314, sass/_tutorial.scss */
+#settingspanel #volume {
+  width: 100%;
+}
+
+/* line 319, sass/_tutorial.scss */
+input[type="range"] {
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-apperance: none;
+  border-radius: 10px;
+  height: 10px;
+  background-color: #e5e5e5;
+}
+
+/* line 328, sass/_tutorial.scss */
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  background-color: #ffffff;
+  border: 5px solid #ccc;
+  height: 50px;
+  width: 50px;
+  border-radius: 100px;
+}
+
+/* line 337, sass/_tutorial.scss */
+.volsettings {
+  padding-top: 30px;
+}
+
+/* line 341, sass/_tutorial.scss */
+.loud {
+  text-align: right;
+}
+
+/* line 345, sass/_tutorial.scss */
+.loud, .soft {
+  line-height: 0px;
+}
+
+@-webkit-keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-o-keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes LTR {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 100%;
+  }
+}
+@-moz-keyframes LTR {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 100%;
+  }
+}
+@-o-keyframes LTR {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 100%;
+  }
+}
+@keyframes LTR {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 100%;
+  }
+}
+/* line 23, sass/style.scss */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: transparent;
+  /* For browsers that do not support gradients */
+  background: -webkit-radial-gradient(transparent, #f2f2f2);
+  /* Safari 5.1 to 6.0 */
+  background: -o-radial-gradient(transparent, #f2f2f2);
+  /* For Opera 11.6 to 12.0 */
+  background: -moz-radial-gradient(transparent, #f2f2f2);
+  /* For Firefox 3.6 to 15 */
+  background: radial-gradient(rgba(0, 0, 0, 0), #f2f2f2);
+  /* Standard syntax */
+}
+
+/* line 36, sass/style.scss */
+#container {
+  white-space: nowrap;
+  font-size: 0;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -100;
+}
+
+/* line 48, sass/style.scss */
+#logo {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+  height: 100px;
+}
+
+/* line 57, sass/style.scss */
+#icons {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 100;
+  text-align: right;
+}
+/* line 64, sass/style.scss */
+#icons span {
+  -webkit-transition: all 0.5s ease 0s;
+  -moz-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+  white-space: nowrap;
+  display: inline-block;
+  overflow: hidden;
+  max-width: 0px;
+  height: 50px;
+  line-height: 50px;
+}
+/* line 74, sass/style.scss */
+#icons img {
+  height: 50px;
+  padding-left: 5px;
+}
+/* line 80, sass/style.scss */
+#icons a:hover span {
+  max-width: 300px;
+}
+/* line 85, sass/style.scss */
+#icons a {
+  width: 100%;
+  display: block;
+  margin-top: 5px;
+}
+
+/* line 92, sass/style.scss */
+#demo {
+  display: inline-block;
+  margin-top: 15px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+/* line 98, sass/style.scss */
+#end {
+  width: 100%;
+  text-align: center;
+  line-height: 100vh;
+  z-index: 10000 !important;
+}

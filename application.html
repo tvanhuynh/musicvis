@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>MusicVis Application</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div id="container">
+		</div>
+		<img id="logo" src="/images/logo-small.png">
+		<div id="icons">
+			<a id="about" href="#context">
+				<span>About</span>
+				<img src="/images/about.png">
+			</a>
+			<a href="/application.html">
+				<span>New Visualization</span>
+				<img src="/images/new.png">
+			</a>
+			<a id="settings" href="#settingspanel">
+				<span>Advance Settings</span>
+				<img src="/images/settings.png">
+			</a>
+		</div>
+		<div id="tutorial" class="popup">
+			<div class="block" id="select">
+				<h1>Select Source to Start Visualization</h1>
+				<p>MusicVis can read one of two types of audio input: microphone or file upload. Please one select below.</p>
+				<div class="center">
+					<a class="button" id="mic">microphone</a> &nbsp; OR &nbsp; 
+					<a class="button" id="uploadSelect">upload file</a><br />
+					OR &nbsp;&nbsp;
+					<a id="demo" href="#">try a demonstration</a>
+				</div>
+			</div>
+			<div class="block" id="context">
+				<h1>Introduction</h1>
+				<div class="columns"><p><strong>MusicVis is a web application created to visualize sound.</strong> It was created by Van Huynh as a Fine Arts Independent Research Study at the University of Pennsylvania during the Spring 2017 semester; advising was professor David Comberg. Support and guidance were also provided by Ryan Kiple, Amaris Kobolak, Richard Lee, Stephanie Park, Irena Xia, and Minji Yoon.</p>
+				<p><strong>This web application uses Web Audio API to read in audio files or live audio via microphone to draw appropriately colored circles onto HTML5 canvases.</strong> The output works both as a live video visualization of the work, but also as a static image, cumulated at the end of the analysis. The color, position, and size of the circles are all determined by the data coming from the audio feed.</p>
+				<p><strong>Music visualization first started with the Atari Video Music in 1976.</strong> Later in the 90s, music visualization became more widespread on the PC platform, resulting in visualizers like Cubic Player (1994) and Inertia Player (1995). The late 90s saw the birth of various other visualizers, like Winamp (1997), Audion (1999), and SoundJam (2000). These visualizations were initially meant to accompany the sound, be it in a stereo system or while played on an audio player program. More recent visualizers were created with the intention of creating a piece of art. These visualizers are more focused on engaging the audience’s attention by creating a conversation between the visual and the sound. Additionally, these visualizations are often heavily reliant on being dynamic images. They tend to only capture the instantaneous second of the music, not the cumulative whole.</p>
+				<p><strong>MusicVis is a visualizer that is intended to both capture the essence of sound dynamically and statically.</strong> Although it has the goal of being visually appealing, the main objective is to faithfully map the data of the sound. Information is of a higher priority than visual appeal.</p>
+				</div>
+			</div>
+			
+			<div class="block" id="position">
+				<h1>Position as a Function of Time</h1>
+				<p>The positions of the circles along the horizontal axis are determined by the amount of time that have passed in the audio feed. The more time that has passed, the further along the horizontal axis the circle is drawn.</p>
+				<div class="demo position">
+					<div class="line"><p>time</p></div>
+					<div class="circle one">0.5s</div>
+					<div class="circle two">1.0s</div>
+					<div class="circle three">1.5s</div>
+					<div class="circle four">2.0s</div>
+					<div class="circle five">2.5s</div>
+				</div>
+			</div>
+
+			<div class="block" id="height">
+				<h1>Height as a Function of Pitch</h1>
+				<p>The position along the vertical axis is dependent upon the pitch that is being read in at that time. The higher the pitch, the higher the circle is on the vertical axis. The height is calculated using the pitch in such a way that their is a modular distance between octaves. This would not naturally occur because every time a note goes up an octave, the frequencies double, making them exponential.</p>
+				<div class="demo position height">
+					<div class="line"></div>
+					<div class="white"></div>
+					<img src="images/piano.svg">
+					<div class="key keyOne"></div>
+					<div class="key keyTwo"></div>
+					<div class="key keyThree"></div>
+					<div class="key keyFour"></div>
+					<div class="key keyFive"></div>
+					<div class="circle one">65.4Hz</div>
+					<div class="circle two">73.4Hz</div>
+					<div class="circle three">82.4Hz</div>
+					<div class="circle four">87.3Hz</div>
+					<div class="circle five">98.0Hz</div>
+				</div>
+			</div>
+
+			<div class="block" id="size">
+				<h1>Size as a Function of Volume</h1>
+				<p>The size of the circles are determined by the volume of the audio feed. The louder the sound, the larger the circle and in reverse: the quieter the sound, the smaller the circle.</p>
+				<div class="demo position height size">
+					<div class="line"></div>
+					<div class="white"></div>
+					<img src="images/piano.svg">
+					<div class="key keyOne"></div>
+					<div class="key keyTwo"></div>
+					<div class="key keyThree"></div>
+					<div class="key keyFour"></div>
+					<div class="key keyFive"></div>
+					<div class="circle one">...</div>
+					<div class="circle two">soft</div>
+					<div class="circle three">med</div>
+					<div class="circle four">loud</div>
+					<div class="circle five">loudest</div>
+				</div>
+			</div>
+
+			<div class="block" id="color">
+				<h1>Color as a Function of Note</h1>
+				<p>The color of the circles are dependent upon the note. It is done so such that all A notes are the same color, all B notes are the same color, all C notes are the same color, and so on. The mapping of notes to colors is completely arbitrary and not based off any scientific basis. That is to say, there is nothing linking the E note to the color green or the A note to the color red. To edit these colors for your own preference, please adjust the advance settings.</p>
+				<div class="demo position height size color">
+					<div class="line"></div>
+					<div class="white"></div>
+					<img src="images/piano.svg">
+					<div class="key keyOne"></div>
+					<div class="key keyTwo"></div>
+					<div class="key keyThree"></div>
+					<div class="key keyFour"></div>
+					<div class="key keyFive"></div>
+					<div class="circle one">C</div>
+					<div class="circle two">D</div>
+					<div class="circle three">E</div>
+					<div class="circle four">F</div>
+					<div class="circle five">G</div>
+				</div>
+			</div>
+			
+			<div class="block" id="settingspanel">
+				<h1>Advance Settings</h1>
+				<h2>What color does C Natural sound like to you?
+				<div onclick="setRootNode(3)" class="colorselect" style="background-color: rgb(97, 0, 0)"></div>
+				<div onclick="setRootNode(4)" class="colorselect" style="background-color: rgb(163, 0, 0)"></div>
+				<div onclick="setRootNode(5)" class="colorselect" style="background-color: rgb(220, 0, 0)"></div>
+				<div onclick="setRootNode(6)" class="colorselect" style="background-color: rgb(255, 67, 0)"></div>
+				<div onclick="setRootNode(7)" class="colorselect" style="background-color: rgb(255, 197, 0)"></div>
+				<div onclick="setRootNode(8)" class="colorselect" style="background-color: rgb(209, 255, 0)"></div>
+				<div onclick="setRootNode(9)" class="colorselect" style="background-color: rgb(107, 255, 0)"></div>
+				<div onclick="setRootNode(10)" class="colorselect" style="background-color: rgb(0, 255, 93)"></div>
+				<div onclick="setRootNode(11)" class="colorselect" style="background-color: rgb(0, 198, 255)"></div>
+				<div onclick="setRootNode(0)" class="colorselect" style="background-color: rgb(0, 72, 255)"></div>
+				<div onclick="setRootNode(1)" class="colorselect" style="background-color: rgb(70, 0, 220)"></div>
+				<div onclick="setRootNode(2)" class="colorselect" style="background-color: rgb(110, 0, 160)"></div>
+				</h2>
+				<div class="colorsetting">
+				</div>
+				
+				<h2>Should the circles be larger or smaller?</h2>
+				
+				<input id="volume" type="range" />
+				<div class="volsettings">
+					<div class="soft">Smaller</div>
+					<div class="loud">Larger</div>
+				</div>
+			</div>
+		</div>
+		<div id="tutorialnavigation">
+			<a class="button" href="#" id="prev">&larr; prev</a>
+			<a class="button" href="#" id="next">next &rarr;</a>
+		</div>
+		<div id="settingsnavigation">
+			<a class="button" href="#select" id="close">ok</a>
+		</div>
+		<div id="resetsettings">
+			<a class="button" href="#" id="reset">use default settings</a>
+		</div>
+		<div id="skiptutorial">
+			<a class="button" href="#select" id="skip">close</a>
+		</div>
+		<div id="loading">
+			<h1></h1>
+		</div>
+		<div id="end">
+			<a href="application.html" class="button">new visualization</a>
+		</div>
+		<input type="file" id="upload" accept="audio/*" />
+		<script src="jquery.min.js"></script> 
+		<script src="java.js"></script>
+	</body>
+</html>
