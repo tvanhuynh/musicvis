@@ -234,6 +234,11 @@ h2 {
   left: calc(25%);
 }
 
+/* line 40, sass/_popup.scss */
+#samples ul {
+  line-height: 25pt;
+}
+
 /* line 1, sass/_tutorial.scss */
 .demo {
   border: solid 1px #808080;
@@ -531,14 +536,14 @@ h2 {
 }
 /* line 298, sass/_tutorial.scss */
 #settingspanel .circle {
-  height: 3vw;
-  width: 3vw;
+  height: 2.75vw;
+  width: 2.75vw;
   border-radius: 500px;
   display: inline-block;
   margin-right: 20px;
   margin-bottom: 20px;
   text-align: center;
-  line-height: 3vw;
+  line-height: 2.75vw;
   font-size: .6vw;
 }
 /* line 310, sass/_tutorial.scss */
@@ -787,4 +792,22 @@ body, html {
   line-height: 100vh;
   z-index: 100;
   position: absolute;
+}
+
+/* line 106, sass/style.scss */
+#samples li em {
+  color: #ccc;
+  border: 0;
+}
+/* line 111, sass/style.scss */
+#samples a {
+  color: #808080;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+/* line 116, sass/style.scss */
+#samples a:hover {
+  color: #ccc;
 }

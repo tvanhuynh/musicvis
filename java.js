@@ -126,7 +126,6 @@ function visualize() {
 					if (pitch > 0) {
 						$( '#pitch' ).html(Math.ceil(pitch) + "Hz");
 						toRGB(translateFrequency(pitch)); // calculate color
-						$( '#color' ).css("background-color", htmlRGB);
 						drawNote(time - (starttime * 100) + 100, pitch/1, color, volume * 2 * volume_size / 50);
 					}
 				}
@@ -239,7 +238,7 @@ function toRGB(wavelength) {
 	B *= 255;
 	color = rgbToHex(parseInt(R), parseInt(G), parseInt(B));
 	rgb = [parseInt(R), parseInt(G), parseInt(B)];
-	htmlRGB = "rgb(" + rgb[0] + ", " + rgb[1] + ", " + rgb[2] + ")";
+	htmlRGB = "rgba(" + rgb[0] + ", " + rgb[1] + ", " + rgb[2] + ", .25)";
 	return htmlRGB;
 }
 
@@ -424,7 +423,7 @@ function drawColorDemo() {
 	var temp = '<div class="circle" style="background-color: ' + toRGB(translateFrequency(27.50*4)) + '">A</div>';
 	temp += '<div class="circle" style="background-color: ' + toRGB(translateFrequency(29.14*4)) + '">A&#9837; / B&#9839;</div>';
 	temp += '<div class="circle" style="background-color: ' + toRGB(translateFrequency(30.87*4)) + '">B</div>';
-	temp += '<div class="circle" style="background-color: ' + toRGB(translateFrequency(16.35*4)) + '">C</div>';
+	temp += '<div class="circle" style="background-color: ' + toRGB(translateFrequency(16.35*4)) + '; border: 2px solid #808080">C</div>';
 	temp += '<div class="circle" style="background-color: ' + toRGB(translateFrequency(17.32*4)) + '">C&#9837; / D&#9839;</div>';
 	temp += '<div class="circle" style="background-color: ' + toRGB(translateFrequency(18.35*4)) + '">D</div>';
 	temp += '<div class="circle" style="background-color: ' + toRGB(translateFrequency(19.45*4)) + '">D&#9837; / E&#9839;</div>';
@@ -444,19 +443,6 @@ function drawColorDemo() {
 
 // demo scroll
 function scrollNeed() {
-//	var largest = 0;
-//	$('.block').each(function(){
-//		if ($(this).height() > largest) {
-//			largest = $(this).height()
-//		}
-//	})
-//
-//	if (largest > $('.popup').height() + 1) {
-//		$('.popup').css('overflow', 'auto');
-//	} else {
-//		$('.popup').css('overflow', 'hidden');
-//	}
-	
 	$('.block').each(function(){
 		if ($(this).height() > $('.popup').height()) {
 			$('.block').css('height', $('.popup').height());
@@ -542,10 +528,10 @@ $( document ).on('change', '#upload', function(){
 })
 
 // user choice of demo
-$('#demo').click(function(){
+function playSample(file){
 	$('#loading').fadeIn(500);
 	fileSource = true;
-	uploadAudio('sample.mp3');
+	uploadAudio(file);
 	$('#tutorialnavigation').fadeOut(500);
 	$('.popup').fadeOut(500);
 	$('#skip').fadeOut(500);
@@ -553,7 +539,7 @@ $('#demo').click(function(){
 	$('#skip').attr('href', '#');
 	$('#close').attr('href', '#');
 	$('#icons span').css('max-width', 0);
-})
+}
 
 
 
@@ -620,7 +606,7 @@ $(window).resize(function(){
 });
 
 $('#reset').click(function(){
-	setRootNode(0);
+	setRootNode(5);
 	$( "#volume" ).val(50);
 	volume_size = 50;
 });
